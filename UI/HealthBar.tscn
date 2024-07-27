@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/progress_under.png" type="Texture" id=1]
+[ext_resource path="res://UI/progress.png" type="Texture" id=2]
+[ext_resource path="res://UI/HealthBar.gd" type="Script" id=3]
+
+[node name="HealthBar" type="Node2D"]
+script = ExtResource( 3 )
+Caution_zone = 63.45
+danger_zone = 31.75
+
+[node name="under" type="TextureProgress" parent="."]
+margin_right = 21.0
+margin_bottom = 3.0
+value = 100.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+tint_under = Color( 0.552941, 0.486275, 0.486275, 0.901961 )
+
+[node name="Tween" type="Tween" parent="under"]
+
+[node name="Over" type="TextureProgress" parent="."]
+margin_right = 21.0
+margin_bottom = 3.0
+value = 100.0
+texture_progress = ExtResource( 2 )
+tint_under = Color( 1, 1, 1, 0.505882 )
+tint_progress = Color( 0.678431, 1, 0.184314, 1 )
